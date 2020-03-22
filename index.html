@@ -1,0 +1,206 @@
+<html>
+  
+<!-- Mirrored from www.combate.arenah.com.br/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Mar 2020 16:40:08 GMT -->
+<head>
+    <title>Dragonologys</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  </head>
+  <body>
+    <div id="planning-room">
+      <div class="header">
+        <a href="javascript:;" id="new-combat">
+          <img src="images/icons/Add.png" alt="Criar combate" title="Criar combate"/> 
+        </a>
+
+        <a href="javascript:;" id="to-characters-headquarters">
+          <img src="images/icons/icon_users.png" alt="Criar combate" title="Criar combate"/> 
+        </a>        
+      </div>
+
+      <div id="combats" class="area">
+
+      </div>
+
+      <div id="combat-template">
+        <div class="combat">
+          <div class="outer"></div>
+          <div class="inner">
+            <div class="content"></div>
+            <div class="footer">
+              <a href="javascript:;" class="remove-combat">Excluir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="combat-room">
+      <div class="header">
+        <a href="javascript:;" id="to-planning-room">
+          <img src="images/icons/Back.png" alt="Voltar para a lista de combates" title="Voltar para a lista de combates"/>
+          &nbsp;Voltar para a lista de combates
+        </a>
+        <div>
+          <h1></h1>
+        </div>
+        <div id="to-combat-zone-div">
+          <img src="images/icons/Forward.png" alt="Ir ao combate" title="Ir ao combate"/>
+          <a href="javascript:;" id="to-combat-zone">
+            Ir ao combate
+          </a>
+        </div>
+      </div>
+      <div class="area">
+        <div>
+          <div id="pcs" class="charBox">
+            <span>PCs</span>
+            <ul>
+            </ul>
+          </div>
+          <div id="currentCharacters" class="charBox">
+            <span>Personagens</span>
+            <div id="filters">
+              <a href="javascript:;" onclick="CombatRoom.loadCharactersForBattle($('#combat-room h1').text().replace('Combate ',''))"/>[T]</a>
+              <a href="javascript:;" onclick="CombatRoom.loadCharactersForBattle($('#combat-room h1').text().replace('Combate ',''), 'Ally')"/>
+                <div class="allianceFilters ally"></div>
+              </a>
+              <a href="javascript:;" onclick="CombatRoom.loadCharactersForBattle($('#combat-room h1').text().replace('Combate ',''), 'Enemy')"/>
+                <div class="allianceFilters enemy"></div>
+              </a>
+            </div>
+            <ul>
+            </ul>            
+          </div>
+          <div id="npcs" class="charBox">
+            <span>NPCs</span>
+
+            <div id="npc-buttons">
+              <input type="text" value="1" id="randomize-count"/>
+              <a href="javascript:;" id="randomize-npc">
+                <img src="images/icons/Random.png" title="Random" alt="Random"/>
+              </a>
+              <a href="javascript:;" id="add-npc">
+                <img src="images/icons/Aura.png" title="Adicionar" alt="Adicionar"/>
+              </a>
+            </div>
+
+            <div id="npc-class">
+              <select id="characterClasses">
+                <option value="">Choose...</option>
+                <option value="angel">Anjo</option>
+                <option value="bard">Bardo</option>
+                <option value="cleric">Cleric</option>
+                <option value="necromancer">Necromante</option>                
+                <option value="sorcerer">Sorcerer</option>
+                <option value="paladin">Paladin</option>
+                <option value="pirate">Pirata</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">Rogue</option>
+                <option value="warrior">Warrior</option>
+              </select>
+            </div>
+            <div id="character-thumb"></div>
+            <div id="npc-data">
+              <dl>
+                <dt>Fr</dt>
+                <dd><input type="text" id="fr"/></dd>
+                <dt>Con</dt>
+                <dd><input type="text" id="con"/></dd>
+                <dt>Dex</dt>
+                <dd><input type="text" id="dex"/></dd>
+                <dt>Agi</dt>
+                <dd><input type="text" id="agi"/></dd>
+                <dt>Int</dt>
+                <dd><input type="text" id="int"/></dd>
+                <dt>Will</dt>
+                <dd><input type="text" id="will"/></dd>
+                <dt>Per</dt>
+                <dd><input type="text" id="per"/></dd>
+                <dt>Car</dt>
+                <dd><input type="text" id="car"/></dd>
+                <dt>Total:</dt>
+                <dd><input type="text" id="total" disabled="disabled"/></dd>
+              </dl>
+              <dl>
+                <dt>LVL</dt>
+                <dd><input type="text" id="level"/></dd>
+                <dt>PV</dt>
+                <dd><input type="text" id="pv"/></dd>
+                <dt>PM</dt>
+                <dd><input type="text" id="pm"/></dd>
+                <dt>IP</dt>
+                <dd><input type="text" id="ip"/></dd>
+                <dt>Aliado</dt>
+                <dd>
+                  <select id="team">
+                    <option value="false">Não</option>
+                    <option value="true">Sim</option>
+                  </select>
+                </dd>
+              </dl>
+              <div id="npc-skills-panel">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+
+    <div id="combat-zone">
+      <div class="header">
+        <a href="javascript:;" id="to-combat-room">
+          <img src="images/icons/Back.png" alt="Voltar à sala de planejamento" title="Voltar à sala de planejamento"/>
+          &nbsp;Voltar para a sala de planejamento
+        </a>
+        <a href="javascript:;"> | </a>
+        <a href="javascript:;" id="roll-initiative">Iniciativa</a>
+        <a href="javascript:;"> | </a>
+        <a href="javascript:;" id="end-combat">Finalizar</a>
+      </div>
+      <div class="area">
+        <div id="initiative-list">
+        </div>
+        <div id="battlefield">
+          <div id="action"></div>
+          <div id="panel"></div>
+        </div>
+      </div>      
+    </div>
+
+    <div id="characters-headquarters">
+      <div class="header">
+        <a href="javascript:;" id="back-to-planning-room">
+          <img src="images/icons/Back.png" alt="Voltar para a lista de combates" title="Voltar para a lista de combates"/>
+          &nbsp;Voltar para a lista de combates
+        </a>
+      </div>
+      <div id="choose-character"></div>
+      <div id="edit-character-profile"></div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="mersenne-twister.js"></script>
+    
+    <script src="models/character.js"></script>
+    <script src="models/battle.js"></script>
+    <script src="models/skill.js"></script>
+    
+    <script src="factories/names-factory.js"></script>
+    <script src="factories/skills-factory.js"></script>
+
+    <script src="controllers/character-controller.js"></script>
+    <script src="controllers/battle-controller.js"></script>
+    <script src="controllers/npc-controller.js"></script>
+    <script src="controllers/initiative-controller.js"></script>
+    <script src="controllers/skills-controller.js"></script>
+    <script src="controllers/damage-controller.js"></script>
+    
+    <script src="combat-room.js"></script>
+    <script src="combat-zone.js"></script>
+    <script src="characters-headquarters.js"></script>
+    <script src="game.js"></script>
+
+  </body>
+
+<!-- Mirrored from www.combate.arenah.com.br/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Mar 2020 16:40:31 GMT -->
+</html>

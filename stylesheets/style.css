@@ -1,0 +1,780 @@
+body {
+  background-color: #0B0D33;
+}
+
+#npc-buttons {
+  float: left;
+  text-align: center;
+  width: 100%;
+  background-color: #DEDDEC;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+#randomize-count {
+  top: 30px;
+  left: 185px;
+  position: absolute;
+  float: left;
+  height: 17px;
+  width: 18px;
+  background-color: #553E3E;
+  border: 1px solid #ccc;
+  color: #fff;
+  text-align: center;
+}
+
+#combat-template {
+  display: none;
+}
+
+#combat-room .area {
+  margin-top: 0!important;
+  border-top: 2px solid #381212;
+}
+
+.area {
+  margin-top: 10px;
+  padding-top: 10px;
+  float: left;
+  width: 100%;
+  /*height: 100%;*/
+  min-height: 100%;
+  background-color: #DDE9EE;
+  padding-left: 5px;
+}
+
+.combat {
+  position: relative;
+  width: 110px;
+  height: 120px;
+  float: left;
+}
+
+.combat .outer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #BAEEAD;
+}
+
+.combat .inner {
+  width: 100px;
+  height: 110px;
+  ; position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.combat .inner:hover {
+  border-color: #34AC77;
+}
+
+.combat .inner .content {
+  height: 92px;
+  font-size: 85px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.combat .inner .content:hover {
+  color: #34AC77;
+}
+
+.combat .inner .footer {
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #ccc;
+  background-color: #5F73CA;
+  height: 17px;
+  float: left;
+  text-align: center;
+}
+
+.remove-combat {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+#combat-zone, #combat-room {
+  display: none;
+}
+
+#combat-zone h1 {
+  color: #5F73CA;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#combat-room h1 {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 880px;
+  height: 30px;
+  float: left;
+  text-align: center;
+  font-size: 21px;
+  color: #E2C635;
+}
+
+.header {
+  border-bottom: 1px solid #ccc;
+  height: 30px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.characterClasses {
+	background: url(../images/classes.jpg) no-repeat;
+  width: 200px;
+  height: 155;
+}
+
+.cleric {background-position: 0 0;}
+.warrior {background-position: -200px 0;}
+.angel {background-position: -200px 0;}
+.sorcerer {background-position: -400px 0;}
+.necromancer {background-position: -400px 0;}
+.paladin {background-position: 0 -155px;}
+.ranger {background-position: -200px -155px;}
+.bard {background-position: -200px -155px;}
+.rogue {background-position: -400px -155px;}
+.pirate {background-position: -400px -155px;}
+
+.charBox {
+  width: 400px; 
+  height: auto;
+  min-height: 465px;
+  float: left; 
+  border-right: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.charBox span {
+  text-align: center;
+  display: block;
+  width: 98%;
+  margin-left: 3px;
+  color: #000;
+  font-size: 25px;
+}
+
+.charBox ul {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+}
+
+.charBox ul li a {
+  display: inline-table;
+  text-decoration: none;
+  color: #000;
+  margin-right: 3px;
+}
+
+.charBox ul li {
+  border-bottom: 1px solid #D6D6EC;
+}
+
+#pcs.charBox span {
+  border-bottom: 2px solid #179151;
+}
+
+#npcs.charBox span {
+  border-bottom: 2px solid #C4640C;
+}
+
+#currentCharacters.charBox span {
+  border-bottom: 2px solid #5F73CA;
+}
+
+.removeCharacter {
+  background: url(../images/icons/Cross.png) no-repeat;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.addCharacter {
+  background: url(../images/icons/GreenAdd.png) no-repeat;
+  background-size: 16px;
+  width: 16px;
+  height: 16px; 
+}
+
+.addedCharacter {
+  background: url(../images/icons/Enabled.png) no-repeat !important;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+}
+
+#to-planning-room {
+  display: block;
+  margin-right: 30px;
+  float: left;
+}
+
+#to-planning-room img {
+  float: left;
+}
+
+#character-thumb {
+  margin: 0 auto;
+}
+
+#npc-class {
+  text-align: center;
+}
+
+#npc-class select {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#npc-data {
+  float: left;
+  width: 380px;
+  clear: both;
+  padding: 10px;
+}
+
+#npc-data dl {
+  float: left;
+}
+
+#npc-data dt {
+  width: 55px;
+  float: left;
+}
+
+#npc-data dd {
+  width: 150px;
+}
+
+#npc-data dd input {
+  width: 50px;
+}
+
+.pc {
+  color: #179151 !important;
+}
+
+#randomize-npc {
+  display: inline-table;
+}
+
+#add-npc {
+  display: inline-table;
+  margin-top: -4px;
+}
+
+#currentCharacters {
+  position: relative;
+}
+
+#currentCharacters li {
+  position: relative;
+}
+
+#currentCharacters li a {
+  color: #C4640C;
+}
+
+.allianceStatus, .allianceFilters {
+  left: 375px;
+  top: 0;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.allianceFilters.ally {
+  left: 30px;
+  top: 1px;
+}
+
+.allianceFilters.enemy {
+  left: 50px;
+  top: 1px;
+}
+
+.ally {
+  background-color: #1CC9C9;
+}
+
+.enemy {
+  background-color: #f00;
+}
+
+#filters {
+  position: absolute;
+  top: 1px;
+  left: 328px;
+}
+
+#filters a {
+  color: #1E17C9;
+  text-decoration: none;
+}
+
+#to-combat-zone-div {
+  float: right;
+  margin-top: -10px;
+}
+
+#to-combat-zone-div img {
+  float: right;
+  margin-top: 10px;
+}
+
+#to-combat-zone {
+  margin-top: 10px;
+  float: right;
+  margin-right: 7px;
+}
+
+#npc-skills-panel {
+  width: 100%;
+  float: left;
+}
+
+#npc-skills {
+  width: 200px;
+}
+
+.skill-title {
+  width: 30px;
+  float: left;
+  margin-right: 25px;
+}
+
+.addskill {
+  background: url(../images/icons/GreenAdd.png) no-repeat;
+  background-size: 16px;
+  height: 16px;
+  margin-left: 5px;
+  text-decoration: none;
+  width: 16px;
+  display: inline-block;
+}
+
+.removeskill {
+  background: url(../images/icons/Cross.png) no-repeat;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  text-decoration: none;
+  display: inline-block !important;
+}
+
+#current-skills {
+  width: 100%;
+  font-size: 14px;
+}
+
+#current-skills ul input {
+  width: 30px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+/******************* Combat Zone **********************/
+
+#initiative-list {
+  width: 385px;
+  min-height: 100%;
+  float: left;
+  border-right: 1px solid #ccc;
+}
+
+#battlefield {
+  float: left;
+  width: 875px;
+}
+
+#action {
+  float: left;
+  width: 100%;
+  height: 400px;
+  border-bottom: 1px solid #ccc;
+  overflow: auto;
+}
+
+#panel {
+  width: 97%;
+  float: left;
+  color: green;
+  background-color: #000;
+  float: left;
+  height: 200px;
+  padding: 5px;
+  overflow: auto;
+  border: 1px dashed #fff;
+}
+
+#initiative-list .ally-color {
+  color: #ccc;
+}
+
+#initiative-list .current .ally-color {
+  border-bottom: 1px solid #1CC9C9;
+}
+
+
+#initiative-list .enemy-color {
+  color: #ccc;
+}
+
+#initiative-list .current .enemy-color {
+  border-bottom: 1px solid #f00;
+}
+
+.vs {
+  padding: 0 5px;
+  color: #ccc;
+  width: 7px;
+}
+
+#initiative-list table {
+  width: 100%;
+}
+
+#initiative-list tr {
+  cursor: pointer;
+}
+
+#initiative-list tr.current {
+  color: #000;
+}
+
+#initiative-list .current td {
+  color: #000 !important;
+}
+
+#initiative-list td.left-item {
+  text-align: right;
+}
+
+#roll-initiative {
+  margin-left: 5px;
+  color: #E2C635;
+}
+
+#pcs .busy {
+  text-decoration: line-through;
+}
+
+#action select {
+  width: 200px;
+  margin-right: 5px;
+}
+
+#action ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+#calculate-initiatives {
+  text-decoration: none;
+  margin: 15px;
+  color: #B61C60;
+  float: left;
+  clear: both;
+  text-align: center;
+  width: 100%;
+}
+
+#action #attacker {
+  float: left;
+  border-right: 1px solid #000;
+  padding: 10px;
+  width: 405px;
+  height: 93%;
+  position: relative;
+  background-color: #F0F0F0;
+  overflow: hidden;
+}
+
+#action #defender {
+  float: left;
+  padding: 10px;
+  height: 93%;
+  overflow: hidden;
+  width: 405px;
+  position: relative;
+  border-right: 1px solid #000;
+}
+
+
+#action dl {
+  float: left;
+  margin: 0;
+}
+
+#action dt {
+  width: 40px;
+  float: left;
+}
+
+#action dd {
+  width: 150px;
+}
+
+#action dd input {
+  width: 50px;
+}
+
+.valueOfSkillDisplay {
+  position: absolute;
+  top: 5px;
+  left: 315px;
+  height: 65px;
+  background-color: #D5DBDD;
+  border: 1px solid #ccc;
+  width: 100px;
+  text-align: center;
+  padding: 2px;
+}
+
+.valueOfSkillDisplay span {
+  font-size: 30px;
+  color: #008000;
+}
+
+#rollTurnDice {
+  position: absolute;
+  border: 1px solid #ccc;
+  top: 228px;
+  left: 170px;
+  width: 240px;  
+}
+
+#testModifier {
+  width: 35px;
+  font-size: 14px;
+}
+
+#roll {
+  position: absolute;
+  left: 209px;
+  height: 27px;
+  top: -2px;
+}
+
+#diceResult {
+  padding-top: 7px;
+  text-align: center;
+  font-size: 20px;
+  height: 54px;
+  position: absolute;
+  border: 1px solid #ccc;
+  top: 265px;
+  left: 170px;
+  width: 240px;
+  display: none;
+}
+
+#damage-options {
+  height: 25px;
+  position: absolute;
+  border: 1px solid #ccc;
+  top: 330px;
+  left: 170px;
+  width: 236px;
+  padding: 2px;
+  display: none;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;  
+}
+
+#damage-options:hover {
+  color: green;
+}
+
+#next-combat-div {
+  text-align: right;
+  position: absolute;
+  top: 370px;
+  left: 330px;
+  width: 95px;
+}
+
+#next-combat-div a, #fast-forward-div a {
+  text-decoration: none;
+  color: #77660E;
+  margin-right: 5px;
+}
+
+#fast-forward-div {
+  text-align: right;
+  position: absolute;
+  top: 370px;
+  left: 80px;
+  width: 240px;
+}
+
+#action li span.left {
+  display: block;
+  width: 250px;
+  float: left;
+}
+
+#action li span.right {
+  display: block;
+  width:  50px;
+  float: left;
+}
+
+
+#action li {
+  border-bottom: 1px solid #ccc;
+  float: left;
+}
+
+/************* Characters Headquarters **********************/
+
+#characters-headquarters {
+  display: none;
+}
+
+#to-characters-headquarters {
+  float: right;
+}
+
+#choose-character {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  float: left;
+  text-align: center;
+  background-color: #5B666B;
+  color: #fff;
+}
+
+#choose-character select {
+  color: #0B0BE2;
+  min-width: 450px;
+  margin-top:20px;
+}
+
+#edit-character-profile {
+  width: 100%;
+  float: left;
+  height: 100%;
+  background: url("../images/textura.jpg");
+  background-size: 100%;
+}
+
+#boxChar {
+  position: absolute;
+  top: 100px;
+  left: 455px;
+  width: 400px;
+  height: 100%;
+  color: white;
+}
+
+#hq_characterClasses {
+  margin-top: 10px;
+}
+
+#hq_character-thumb {
+  margin: 0 auto;
+}
+
+.hq_addskill {
+  background: url(../images/icons/GreenAdd.png) no-repeat;
+  background-size: 16px;
+  height: 16px;
+  margin-left: 5px;
+  text-decoration: none;
+  width: 16px;
+  display: inline-block;
+}
+
+.hq_removeskill {
+  background: url(../images/icons/Cross.png) no-repeat;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  text-decoration: none;
+  display: inline-block !important;
+}
+
+#hq_npc-skills {
+  width: 200px;
+}
+
+#hq_current-skills ul input {
+  width: 30px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+#hq_current-skills ul {
+  list-style-type: none;
+  padding: 5px 5px 5px 0;
+  margin: 0;
+}
+
+#hq_npc-skills-panel {
+  position: absolute;
+  left: 270px;
+  top: 220px;
+  width: 100%;
+}
+
+#hq_npc-class {
+  text-align: center;
+}
+
+#hq_npc-class select {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#hq_npc-data {
+  float: left;
+  width: 380px;
+  clear: both;
+  padding: 10px;
+}
+
+#hq_npc-data dl {
+  float: left;
+}
+
+#hq_npc-data dt {
+  width: 55px;
+  float: left;
+}
+
+#hq_npc-data dd {
+  width: 85px;
+}
+
+#hq_npc-data dd input {
+  width: 50px;
+}
+
+.out-of-combat {
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: #C00A0A;
+}
